@@ -1,13 +1,13 @@
-selenium-cucumber-java-maven
-=================
+### Tasks
 
-selenium-cucumber : Automation Testing Using Java
+Demonstrate your ability to produce maintainable and scalable test automation framework code by completing the tollowing tasks (in a language of your choice):
 
-selenium-cucumber is a behavior driven development (BDD) approach to write automation test script to test Web.
-It enables you to write and execute automated acceptance/unit tests.
-It is cross-platform, open source and free.
-Automate your test cases with minimal coding.
-[More Details](http://seleniumcucumber.info/)
+1. 	Using the classic Angular ToDo app example (http://todomvc.com/examples/angular2/), write the following test cases as Gherkin specifications and automate them using Cucumber
+      - Add a to-do and confirm that it was added to the list
+	  - Complete a to-do and confirm that it was completed
+	  - Delete a to-do and confirm that it was removed from the list
+1. 	Using the National Weather Service public API (https://www.weather.gov/documentation/services-web-api), write an automation that prints out the hourly forecast for a given location (latitude, longitude)
+
 
 Documentation
 -------------
@@ -32,13 +32,13 @@ Framework Architecture
 		|	|	|_Hooks.java
 		|	|	|_RunCukeTest.java
 		|	|_userStepDefinitions
-		|	|	|_loginSteps.java
-		|	|	|_signUpSteps.java
+		|	|	|_userStepDefinitions.java
+		|	|	|_apiStepDefinitions.java
 		|	|	|...
 		|_src/test/resources
 		|	|_features
-		|	|	|to_do.feature
-		|	|	|weather_forecast.feature
+		|	|	|_to_do.feature
+		|	|	|_weather_forecast.feature
 
 * **src/test/resources/features** - all the cucumber features files (files .feature ext) goes here.
 * **src/test/java/userStepDefinition** - you can define step defintion under this package for your feature steps.
@@ -86,3 +86,14 @@ Credits
 In completing this exercise, I modeled after the GitHub project of Sameer Sawant Seleniun-Cucumber-Java which can be
 found [here](https://github.com/selenium-cucumber/selenium-cucumber-java)
 # SignalPath-Cucumber-Framework
+
+selenium-cucumber-java-maven
+=================
+
+selenium-cucumber : Automation Testing Using Java
+
+selenium-cucumber is a behavior driven development (BDD) approach to write automation test script to test Web.
+It enables you to write and execute automated acceptance/unit tests.
+It is cross-platform, open source and free.
+Automate your test cases with minimal coding.
+[More Details](http://seleniumcucumber.info/)
