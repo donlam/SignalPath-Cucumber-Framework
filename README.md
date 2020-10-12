@@ -24,15 +24,6 @@ Framework Architecture
 		|
 		|_src/main/java
 		|	|_appUnderTest
-		|	|	|_calc.apk
-		|	|	|...
-		|	|_browserConfigs
-		|	|	|_saucelab_windows_chrome.properties
-		|	|	|_browserstack_windows_chrome.properties
-		|	|	|...
-		|	|_platformConfigs
-		|		|_saucelab.properties
-		|		|_browserstack.properties
 		|		|...
 		|_src/main/resources
 		|_src/test/java
@@ -46,8 +37,8 @@ Framework Architecture
 		|	|	|...
 		|_src/test/resources
 		|	|_features
-		|	|	|_login.feature
-		|	|	|_signUp.feature
+		|	|	|to_do.feature
+		|	|	|weather_forecast.feature
 
 * **src/test/resources/features** - all the cucumber features files (files .feature ext) goes here.
 * **src/test/java/userStepDefinition** - you can define step defintion under this package for your feature steps.
@@ -72,12 +63,18 @@ Running test
 --------------
 
 Go to your project directory from terminal and hit following commands
-* `mvn test (defualt will run on local firefox browser)`
-* `mvn test "-Dbrowser=chrome" (to use any other browser)`
-* `mvn test -Dcucumber.options="classpath:features/my_first.feature"` to run specific feature.
+* `mvn test (default will run on local firefox browser) against both to_do feature and weather api feature`
+* `mvn test -Dcucumber.options="classpath:features/to_do.feature"` to run specific feature.
 * `mvn test -Dcucumber.options="–-plugin html:target/result-html"` to generate a HTML report.
 * `mvn test -Dcucumber.options="–-plugin json:target/result-json"` to generate a JSON report.
 
+Driver Dependency
+-----------------
+If you run into issues with ghecko driver not found, download the latest from [here](https://github.com/mozilla/geckodriver/releases)
+extract the driver to a local path and add this path into your PATH variable. On a Mac you can edit your `~/.bash_profile`
+with the following lines: `export PATH=$PATH:/your-path-to-ghecko-driver`
+
+Then saved and reload your bash with the following command: `source ~/.bash_profile` you can now re-run the `mvn test` commands
 
 
 Maven/Gradle Dependency
